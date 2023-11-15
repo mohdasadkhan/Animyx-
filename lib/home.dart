@@ -1,4 +1,4 @@
-import 'package:animyx/screens/animation_builder_l1.dart';
+import 'package:animyx/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -8,10 +8,20 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ElevatedButton(
-          child: const Text('Animated Builder'),
-          onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const AnimatedBuilderL1())),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              child: const Text('Animated Builder'),
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const AnimatedBuilderL1())),
+            ),
+            ElevatedButton(
+              child: const Text('Chained Explicit Animation'),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const ChainedExplicitAnimation())),
+            ),
+          ],
         ),
       ),
     );
